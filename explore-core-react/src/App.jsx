@@ -1,11 +1,27 @@
 import './App.css'
-
+import Todo from './todo.jsx'
+import Actor from './actor.jsx'
 function App() {
-  
+  const actors = [
+    {nayok: "shakib khan", naika: "aishwarya rai", sinema: "king khan"},
+    {nayok: "imran khan", naika: "sara alam", sinema: "dilwale"},
+    {nayok: "salman khan", naika: "katrina kaif", sinema: "tiger zinda hai"}
+  ]
   return (
     <>
       <MySelf></MySelf>
+      
+      {
+        actors.map(actor => <Actor actor ={actor}></Actor>)
+      }
+
+
+
       <Person name="ashikur rahman" age={24}></Person>
+      <Todo task="learn react" status="pending" done={false}></Todo>
+      <Todo task="learn react" status="done" done={true}></Todo>
+      <Todo task="learn react" status="75% done" done={false}></Todo>
+      <Todo task="learn react" status="done" done={true}></Todo>
     </>
   )
 }
